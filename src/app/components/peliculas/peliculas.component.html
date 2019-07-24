@@ -1,0 +1,10 @@
+<div class="card-columns">
+  <div class="card" *ngFor="let peliculas of peliculas; let i = index">
+    <img [src]="peliculas.poster_path | imagen" class="card-img-top" [alt]="peliculas.title">
+        <div class="card-body">
+          <h5 class="card-title">{{peliculas.title}}</h5>
+          <p class="card-text">{{peliculas.overview}}</p>
+          <button (click)="verVideo(video)" type="button" class="btn btn-outline-primary btn-block">Ver Más</button>
+        </div>
+  </div>
+</div>

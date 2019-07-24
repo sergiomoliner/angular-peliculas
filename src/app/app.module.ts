@@ -11,11 +11,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
-import { FichaComponent } from './components/ficha/ficha.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule, JsonpModule ],
-  declarations: [ AppComponent, HelloComponent, NavbarComponent, HomeComponent, ImagenPipe, PeliculasComponent, FichaComponent],
+  declarations: [ AppComponent, HelloComponent, NavbarComponent, HomeComponent, ImagenPipe, PeliculasComponent],
   bootstrap:    [ AppComponent ],
   providers: [PeliculasService]
 })

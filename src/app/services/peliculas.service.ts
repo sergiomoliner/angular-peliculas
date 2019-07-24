@@ -10,6 +10,7 @@ export class PeliculasService {
 
   peliculas:any[]=[];
   buscador:any[]=[];
+  buscadorVacio:boolean;
 
   constructor(private jsonp:Jsonp) { }
 

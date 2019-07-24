@@ -17,14 +17,15 @@ export class NavbarComponent implements OnInit {
 
   buscarPelicula(){
     if(this.buscar.length == 0){
-      return;
-    }
-
-    this.peliculasSrv.buscarPelicula(this.buscar)
+      this.peliculasSrv.buscadorVacio = false;
+    }else{
+      this.peliculasSrv.buscadorVacio = true;
+      this.peliculasSrv.buscarPelicula(this.buscar)
             .subscribe(buscador =>{
               this.buscador = buscador.results
               console.log(this.buscador)
               this.peliculasSrv.buscador = this.buscador;
             }); 
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck} from '@angular/core';
 import { PeliculasService } from '../../services/peliculas.service'
 
 @Component({
@@ -12,9 +12,12 @@ export class HomeComponent implements OnInit {
   populares:any;
   kids:any;
   buscador:any;
+  buscadorVacio:boolean;
 
 
-  constructor(private _peliculasSrv:PeliculasService) {
+  constructor(private _peliculasSrv:PeliculasService) {}
+
+  ngOnInit() {
     //cargar metodo getPopulares para crear el ngfor en el html
     this._peliculasSrv.getPopulares()
           .subscribe(populares => {
@@ -38,13 +41,11 @@ export class HomeComponent implements OnInit {
             kids.results.length = 6;
             //extraemos el vector del objeto para poder itinerar en el ngFor
             this.kids = kids.results
-          });    
-   }
-
-  ngOnInit() {
+          });   
   }
 
   ngDoCheck(){
+    this.buscadorVacio = this._peliculasSrv.buscadorVacio;
     this.buscador = this._peliculasSrv.buscador;
   }
 

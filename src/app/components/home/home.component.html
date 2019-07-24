@@ -1,4 +1,6 @@
-<div class="container">
+<div *ngIf="buscadorVacio" class="container">
+  <h3 class="mt-5">Resultados de la busqueda</h3>
+  <hr>
   <br>
     <app-peliculas [peliculas]="buscador"></app-peliculas>
 </div>

@@ -3,7 +3,7 @@
     <img [src]="peliculas.poster_path | imagen" class="card-img-top" [alt]="peliculas.title">
         <div class="card-body">
           <h5 class="card-title">{{peliculas.title}}</h5>
-          <p class="card-text">{{peliculas.overview}}</p>
+          <p class="card-text">{{peliculas.overview | slice:0:120}}...</p>
           <button (click)="verVideo(video)" type="button" class="btn btn-outline-primary btn-block">Ver Más</button>
         </div>
   </div>
